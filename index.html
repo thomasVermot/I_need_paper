@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>I need paper!</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  	<div id="iNeedPaper">
+      <!-- TOP LINE -->
+      <div>
+        <!-- ROOM ILLUSTRATION -->
+        <div id="room" class="room-1">
+          <!-- MOVEMENT ARROWS -->
+          <div class="arrow" id="up">up</div>
+          <div class="arrow" id="down">down</div>
+          <div class="arrow" id="right">right</div>
+          <div class="arrow" id="left">left</div>
+        </div>
+        <!-- MENU -->
+        <div id="menu">
+          <!-- POOPMETER -->
+          <div id="poopometer">
+            <p> Cacaclysmomètre </p>
+            <div class="gauge">
+              <div class="value" style="width:65%;"></div>
+            </div>
+          </div>
+          <!-- INVENTORY -->
+          <div id="inventory">
+            <p>Inventaire</p>
+            <div id="paper"   class="object inactive"></div>
+            <div id="tissue"  class="object inactive"></div>
+            <div id="bear"    class="object inactive"></div>
+            <div id="oil" class="object inactive"></div>
+            <div id="pudding"  class="object inactive"></div>
+            <div class="clearboth"></div>
+          </div>
+        </div><!-- END MENU -->
+      </div><!-- END TOP LINE -->
+      <div id="dialog"><!-- DIALOG -->
+        <!-- NPC -->
+        <div id="npcImage" class="characterImage"></div>
+        <div id="npcText" class="textBubble">coucou!</div>
+        <div id="playerText">
+          <div id="answer-1" class="textBubble">Salut!</div>
+          <div id="answer-2" class="textBubble">Je ne veux pas te parler</div>
+        </div>
+        <div id="playerImage" class="characterImage active"></div>
+      </div><!-- END DIALOG -->
+  	</div>
+  </body>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/main.js"></script>
+</html>

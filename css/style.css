@@ -1,0 +1,145 @@
+#iNeedPaper{
+	border: solid black 1px;
+	display: inline-block;
+	position: relative;
+}
+
+
+/* ROOM image */
+	#room {
+		background: #aaaaaa;
+		width: 500px;
+		height: 500px;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		background-image: url("../img/map.jpg");
+		background-repeat: no-repeat;
+		transition-duration: .5s;
+	}
+	/* FLOOR 0 */
+	#room.room-1 { background-position: 0px     -3500px;}
+	#room.room-2 { background-position: -500px  -3500px;}
+	#room.room-3 { background-position: -1000px -3500px;}
+	/* FLOOR 1 */
+	#room.room-4 { background-position: 0px     -3000px;}
+	#room.room-5 { background-position: -500px  -3000px;}
+	#room.room-6 { background-position: -1000px -3000px;}
+	/* FLOOR 2 */
+	#room.room-7 { background-position: -500px  -2500px;}
+	#room.room-8 { background-position: -1000px -2500px;}
+	/* FLOOR 3 */
+	#room.room-9 { background-position: -1000px -2000px;}
+	/* FLOOR 4 */
+	#room.room-10{ background-position: -500px  -1500px;}
+	#room.room-11{ background-position: -1000px -1500px;}
+	#room.room-12{ background-position: -1500px -1500px;}
+	#room.room-13{ background-position: -2000px -1500px;}
+	/* FLOOR 5 */
+	#room.room-14{ background-position: -500px  -1000px;}
+	#room.room-15{ background-position: -1500px -1000px;}
+	/* FLOOR 6 */
+	#room.room-16{ background-position: -1500px -500px;}
+	/* FLOOR 7 */
+	#room.room-17{ background-position: -1500px 0px;}
+
+	/* NAVIGATION ARROWS */
+	#room .arrow{
+		display: none;
+	}
+	#room .arrow.active{
+		display: block;
+	}
+
+/* RIGHT MENU */
+	#menu{
+		width: 200px;
+		position: absolute;
+		top: 0px;
+		left: 520px;
+	}
+	/* POOPOMETER */
+		#poopometer .gauge{
+			width: 100%;
+			height: 20px;
+			border-radius: 10px;
+			border: solid 3px #000000;
+	    	box-sizing: border-box;
+		}
+		#poopometer .value{
+			background-color: #422D1B;
+			height: 100%;
+	    	transition-duration: .3s;
+		}
+	/* INVENTORY */
+		#inventory {
+			border: solid 1px red;
+		}
+		#inventory .object{
+	    	box-sizing: border-box;
+			width: 60px;
+			height: 60px;
+			margin: 0 3px 6px;
+			float: left;
+			background-image: url("../img/objects.jpg");
+
+			border: solid 1px black;
+		}
+		#inventory .object.inactive{
+			background-image: none;
+		}
+		#inventory #paper    { background-position: 0px 0px; }
+		#inventory #bear     { background-position: -60px 0px; }
+		#inventory #oil      { background-position: -120px 0px; }
+		#inventory #pudding  { background-position: -180px 0px; }
+		#inventory #tissue   { background-position: -240px 0px; }
+/* DIALOG */
+	#dialog {
+		position: absolute;
+		top: 520px;
+		left: 0px;
+		height: 200px;
+		width: 720px;
+		border: solid 1px red;
+	}
+
+	/* CHARACTER IMAGE */
+	#dialog .characterImage{
+		border: solid 1px green;
+		width: 150px;
+		height: 200px;
+		position: absolute;
+		top: 0px;
+	}
+	#npcImage{
+		left: 0px;
+	}
+	#playerImage{
+		right: 0px;
+	}
+	/* CHARACTER TEXT */
+	#dialog .textBubble{
+		border: solid 1px red;
+		text-align: center;
+		width: 190px;
+	}
+	#npcText{
+		position: absolute;
+		top: 0px;
+		left: 160px;
+	}
+	#playerText{
+		position: absolute;
+		top: 0px;
+		right: 160px;
+	}
+	#playerText .answer{
+		width: 190px;
+		border: solid 1px blue;
+	}
+
+
+
+.clearboth{
+	clear: both;
+}
