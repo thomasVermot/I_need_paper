@@ -255,6 +255,9 @@ function Room(roomName, up,right,down,left ){
 	function adPoop(){
 		poopometer+=5;
 		$('#poopometer .value').css('width',poopometer+'%')
+		if(poopometer>100){
+			lose();
+		}
 	}
 	function removePoop(){
 		poopometer-=5;
@@ -291,8 +294,12 @@ function Room(roomName, up,right,down,left ){
 		if(object=='tissue'){
 			alert("Mais vous avez les fesses iritées. Le sopalin ça gratte!");
 		}
+		alert("appuyez sur F5 pour recommencer");
 	}
-	function lose(){alert("Vous vous êtes fait dessus. ça arrive aux meilleurs d'entre nous. Et là c'est à vous que c'est arrivé.");}
+	function lose(){
+		alert("Vous vous êtes fait dessus. ça arrive aux meilleurs d'entre nous. Et là c'est à vous que c'est arrivé.");
+		alert("appuyez sur F5 pour recommencer");
+	}
 
 	function activateRoom(){
 		switch(room){
@@ -309,7 +316,7 @@ function Room(roomName, up,right,down,left ){
 			case 3: enableNavigation();break;
 			case 4: enableNavigation();adPoop();break;
 			case 5: enableNavigation();break;
-			case 7: enableNavigation();adPoop();break;
+			case 7: enableNavigation();break;
 			case 8: enableNavigation();adPoop();break;
 			case 17: hasPaper=true;activateObject('paper');break;
 		}
@@ -322,6 +329,7 @@ function Room(roomName, up,right,down,left ){
 				if(hasBear){
 					hasOil=true;
 					activateObject('oil');
+					$('#room').css('background-image','url("img/map-1.jpg")');
 					console.log('    You obtain Body Oil!');
 				}
 				break;
@@ -347,6 +355,7 @@ function Room(roomName, up,right,down,left ){
 				talkedToBear=true;
 				if(talkedToKid){
 			    	console.log('    He follows you');
+					$('#room').css('background-image','url("img/map-1.jpg")');
 					hasBear=true;
 					activateObject('bear');
 				}
@@ -442,6 +451,7 @@ function exitRoom(){
 	$('#room').removeClass('room-'+room);
 	//unset the character image
 	$('#npcImage').removeClass('npc-'+room);
+	$('#playerText').removeClass('bubble-'+room);
 	//unset the text
 	disactiveConversation();
 	//Disable navigation arrows
@@ -452,6 +462,7 @@ function loadRoom(){
 	$('#room').addClass('room-'+room);
 	//load the character image
 	$('#npcImage').addClass('npc-'+room);
+	$('#playerText').addClass('bubble-'+room);
 	//Enable navigation arrows
 	console.log("Going to room "+room+" ( "+rooms[room].roomName+" )");
 	activateRoom();

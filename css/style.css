@@ -13,9 +13,15 @@
 		position: absolute;
 		top: 0px;
 		left: 0px;
-		background-image: url("../img/map.jpg");
+		background-image: url("../img/map-0.jpg");
 		background-repeat: no-repeat;
 		transition-duration: .5s;
+	}
+	#room.map1{
+		background-image: url("../img/map-1.jpg");
+	}
+	#room.map2{
+		background-image: url("../img/map-2.jpg");
 	}
 	/* FLOOR 0 */
 	#room.room-1 { background-position: 0px     -3500px;}
@@ -72,9 +78,6 @@
 	    	transition-duration: .3s;
 		}
 	/* INVENTORY */
-		#inventory {
-			border: solid 1px red;
-		}
 		#inventory .object{
 	    	box-sizing: border-box;
 			width: 60px;
@@ -83,16 +86,17 @@
 			float: left;
 			background-image: url("../img/objects.jpg");
 
-			border: solid 1px black;
+			border: solid 2px black;
+			border-radius: 5px;
 		}
 		#inventory .object.inactive{
-			background-image: none;
+			background-image: none !important;
 		}
-		#inventory #paper    { background-position: 0px 0px; }
-		#inventory #bear     { background-position: -60px 0px; }
-		#inventory #oil      { background-position: -120px 0px; }
-		#inventory #pudding  { background-position: -180px 0px; }
-		#inventory #tissue   { background-position: -240px 0px; }
+		#inventory #paper    { background-image: url("../img/object-paper.png"); }
+		#inventory #bear     { background-image: url("../img/object-bear.png"); }
+		#inventory #oil      { background-image: url("../img/object-oil.png"); }
+		#inventory #pudding  { background-image: url("../img/object-pudding.png"); }
+		#inventory #tissue   { background-image: url("../img/object-tissue.png"); }
 /* DIALOG */
 	#dialog {
 		position: absolute;
@@ -100,12 +104,12 @@
 		left: 0px;
 		height: 200px;
 		width: 720px;
-		border: solid 1px red;
 	}
 
 	/* CHARACTER IMAGE */
 	#dialog .characterImage{
-		border: solid 1px green;
+		border: solid 2px black;
+		border-radius: 5px;
 		width: 150px;
 		height: 200px;
 		position: absolute;
@@ -113,15 +117,38 @@
 	}
 	#npcImage{
 		left: 0px;
+		border: solid 2px black;
 	}
+	#npcImage.npc-6,
+	#npcImage.npc-9, 
+	#npcImage.npc-10,
+	#npcImage.npc-11,
+	#npcImage.npc-12,
+	#npcImage.npc-13,
+	#npcImage.npc-14,
+	#npcImage.npc-15,
+	#npcImage.npc-16{background-image: url("../img/characters.jpg");}
+
+	#npcImage.npc-6{background-position: -150px;}
+	#npcImage.npc-9, #npcImage.npc-10{background-position: -300px;}
+	#npcImage.npc-11{background-position: -450px;}
+	#npcImage.npc-12{background-position: -600px;}
+	#npcImage.npc-13{background-position: -750px;}
+	#npcImage.npc-14{background-position: -900px;}
+	#npcImage.npc-15{background-position: -1050px;}
+	#npcImage.npc-16{background-position: -1200px;}
+
 	#playerImage{
 		right: 0px;
+		background-image: url("../img/characters.jpg");
 	}
 	/* CHARACTER TEXT */
 	#dialog .textBubble{
-		border: solid 1px red;
 		text-align: center;
-		width: 190px;
+		width: 180px;
+		border: solid 3px black;
+		border-radius: 5px;
+		padding: 5px;
 	}
 	#npcText{
 		position: absolute;
@@ -135,9 +162,71 @@
 	}
 	#playerText .answer{
 		width: 190px;
-		border: solid 1px blue;
+		cursor: pointer;
+		transition-duration: .5s;
+	}
+	#playerText.bubble-6  .answer,
+	#playerText.bubble-9  .answer, 
+	#playerText.bubble-10 .answer,
+	#playerText.bubble-11 .answer,
+	#playerText.bubble-12 .answer,
+	#playerText.bubble-13 .answer,
+	#playerText.bubble-14 .answer,
+	#playerText.bubble-15 .answer,
+	#playerText.bubble-16 .answer{
+    	animation: bubbleAnimation 1s infinite;
+    }
+	@keyframes bubbleAnimation {
+		0% {margin-top: 0;}
+		60%{margin-top: -10px;}
+		100%{margin-top: 0;}
+	}
+	#playerText .answer:hover{
+		transform: scale(1.05);
+		animation: none;
 	}
 
+
+/* ARROWS */
+	.arrow {
+		height: 50px;
+		width: 50px;
+    	animation: arrowAnimation 1s infinite;
+    	transition-duration: .3s;
+	}
+	@keyframes arrowAnimation {
+		0% {transform: scale(1.0)}
+		60%{transform: scale(1.1)}
+		100%{transform: scale(1.0)}
+	}
+	.arrow:hover{
+		transform: scale(1.2);
+		animation: none;
+	}
+		.arrow#up{
+			background-image: url("../img/arrow-up.png");
+			position: absolute;
+			top: 10px;
+			left: 225px;
+		}
+		.arrow#down{
+			background-image: url("../img/arrow-down.png");
+			position: absolute;
+			bottom: 10px;
+			left: 225px;
+		}
+		.arrow#right{
+			background-image: url("../img/arrow-right.png");
+			position: absolute;
+			right: 10px;
+			top: 225px;
+		}
+		.arrow#left{
+			background-image: url("../img/arrow-left.png");
+			position: absolute;
+			left: 10px;
+			top: 225px;
+		}
 
 
 .clearboth{
